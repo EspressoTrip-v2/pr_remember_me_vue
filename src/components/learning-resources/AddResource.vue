@@ -1,22 +1,21 @@
 <template>
-  <teleport to="body">
-    <base-dialog
-      @close-dialog="closeDialog"
-      title="Invalid Input"
-      v-if="inputIsInvalid"
-    >
-      <template #default>
-        <p>Unfortunately, at least one input value is invalid.</p>
-        <p>
-          Check all inputs and make sure at least a few characters have been
-          entered in each field.
-        </p>
-      </template>
-      <template #actions>
-        <base-button @click="closeDialog">Okay</base-button>
-      </template>
-    </base-dialog>
-  </teleport>
+  <base-dialog
+    @close-dialog="closeDialog"
+    title="Invalid Input"
+    v-if="inputIsInvalid"
+  >
+    <template #default>
+      <p>Unfortunately, at least one input value is invalid.</p>
+      <p>
+        Check all inputs and make sure at least a few characters have been
+        entered in each field.
+      </p>
+    </template>
+    <template #actions>
+      <base-button @click="closeDialog">Okay</base-button>
+    </template>
+  </base-dialog>
+
   <base-card>
     <form @submit.prevent="submitData">
       <div class="form-control">
