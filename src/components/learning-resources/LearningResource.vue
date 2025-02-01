@@ -3,7 +3,9 @@
     <base-card>
       <header>
         <h3>{{ resource.title }}</h3>
-        <base-button mode="flat" @click="deleteResource">Delete</base-button>
+        <base-button mode="flat" @click="deleteResource(resource.id)"
+          >Delete</base-button
+        >
       </header>
       <p>{{ resource.description }}</p>
       <nav>
@@ -17,6 +19,12 @@ import BaseButton from '@/components/ui/BaseButton.vue';
 
 export default {
   components: { BaseButton },
+  inject: {
+    deleteResource: {
+      type: Function,
+      required: true,
+    },
+  },
   props: {
     resource: {
       id: {
@@ -35,12 +43,6 @@ export default {
         type: String,
         required: true,
       },
-    },
-  },
-  methods: {
-    deleteResource() {
-      console.log(this.resource.id);
-      this.$emit('delete-resource', this.resource.id);
     },
   },
 };
