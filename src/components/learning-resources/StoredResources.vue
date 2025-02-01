@@ -2,7 +2,7 @@
   <ul>
     <learning-resource
       :key="res.id"
-      v-for="res in resource"
+      v-for="res in resources"
       :resource="res"
     ></learning-resource>
   </ul>
@@ -15,8 +15,8 @@ export default {
   components: {
     LearningResource,
   },
-  props: {
-    resource: [
+  inject: {
+    resources: [
       {
         id: {
           type: String,

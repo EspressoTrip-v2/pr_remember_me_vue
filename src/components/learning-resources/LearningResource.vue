@@ -3,7 +3,7 @@
     <base-card>
       <header>
         <h3>{{ resource.title }}</h3>
-        <base-button mode="flat" :action="deleteResource">Delete</base-button>
+        <base-button mode="flat" @click="deleteResource">Delete</base-button>
       </header>
       <p>{{ resource.description }}</p>
       <nav>

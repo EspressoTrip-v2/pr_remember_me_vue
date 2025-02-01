@@ -1,5 +1,5 @@
 <template>
-  <button @click="action" :class="mode" :type="type">
+  <button :class="mode">
     <slot>Submit</slot>
   </button>
 </template>
@@ -7,17 +7,9 @@
 <script>
 export default {
   props: {
-    action: {
-      type: Function,
-      required: false,
-    },
     mode: {
       type: String,
-      required: true,
-    },
-    type: {
-      type: String,
-      default: 'button',
+      required: false,
     },
   },
 };
